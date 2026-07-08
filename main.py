@@ -1,27 +1,23 @@
 from food_order import food_order
 
 def main():
-    print("=== نظام طلب الطعام FoodExpress ===")
+    print("==FoodExpress ===")
     try:
-        # طلب إدخال السعر
-        price_input = input("أدخل سعر الوجبة: ")
-        price = float(price_input)  # قد يرمي ValueError
+        price_input = input("enter the meal: ")
+        price = float(price_input)  
         
-        # طلب إدخال الكمية
-        quantity_input = input("أدخل الكمية: ")
-        quantity = int(quantity_input)  # قد يرمي ValueError
+        quantity_input = input("enter quanatity: ")
+        quantity = int(quantity_input)  
         
-        # استدعاء الدالة
         result = food_order(price, quantity)
         
-        # عرض النتيجة أو رسالة الخطأ
         if isinstance(result, str):
-            print(f"خطأ: {result}")
+            print(f"error: {result}")
         else:
-            print(f"الإجمالي: {result} ريال")
+            print(f"tottal: {result} dollars")
     
     except ValueError:
-        print("خطأ: يرجى إدخال أرقام صحيحة (السعر عدد عشري، الكمية عدد صحيح)")
+        print("error")
 
 if __name__ == "__main__":
     main()
