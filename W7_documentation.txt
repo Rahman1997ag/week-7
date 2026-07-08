@@ -1,0 +1,30 @@
+==================== W7_documentation.txt ====================
+
+Date: 2026-07-08
+Developer: [Your Name]
+
+1. Bugs identified in the original code (main.py and food_order.py):
+
+   - The function did not validate the inputs (negative values or zero).
+   - It did not handle non-numeric data types (e.g., text strings), which caused the program to crash.
+   - In main.py, try/except was not used to catch conversion errors (ValueError).
+   - The function in food_order.py was incomplete (missing code) and did not return the value correctly.
+   - The quantity was not validated to ensure it is an integer, allowing decimal numbers to be entered.
+
+2. Corrective actions taken:
+
+   - Added conditional checks to ensure that the price > 0 and that the quantity is a positive integer.
+   - Used isinstance to check data types, returning clear error messages ("invalid price", "invalid quantity") instead of raising unexpected exceptions.
+   - In main.py, wrapped the conversion operations in try/except blocks to display appropriate error messages to the user.
+   - Completed the missing code in food_order.py (returning price * quantity).
+
+3. Tests (pytest):
+   - Written tests for valid values: (10,2)->20, (15,2)->30, (25,4)->100, (5,2)->10.
+   - Written tests for invalid values: negative or non-numeric price, and zero, negative, or non-numeric quantity.
+   - All tests pass successfully.
+
+4. How to run the tests:
+   - Make sure pytest is installed: pip install pytest
+   - Navigate to the week_7 directory and run: pytest
+
+==================== End ====================
